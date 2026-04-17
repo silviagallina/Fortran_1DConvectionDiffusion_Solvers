@@ -2,7 +2,7 @@ This repository contains a modular Fortran 90 implementation for solving the 1D 
 
 ## Physical Models
 The code is designed to solve the general transport equation:
-$$\frac{\partial \phi}{\partial t} + c \frac{\partial \phi}{\partial x} = \nu \frac{\partial^2 \phi}{\partial x^2}$$
+$$\frac{\partial \phi}{\partial t} = - c \frac{\partial \phi}{\partial x} + \nu \frac{\partial^2 \phi}{\partial x^2}$$
 
 The repository is structured to handle three specific cases:
 1. **Pure Convection** (Gaussian and Harmonic Initial COnditions)
