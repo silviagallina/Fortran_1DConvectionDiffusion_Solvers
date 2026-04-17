@@ -1,4 +1,4 @@
-## Numerical Approach for the 1D Convection-Diffusion Equation
+# Numerical Approach for the 1D Convection-Diffusion Equation
 
 This repository contains a modular Fortran 90 implementation for solving the 1D Convection-Diffusion equation. The project explores various spatial discretization schemes and high-order time integration.
 
