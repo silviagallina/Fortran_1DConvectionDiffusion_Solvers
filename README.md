@@ -30,4 +30,5 @@ To compile the project, use a Fortran compiler (e.g., gfortran) following the de
 
 ```bash
 gfortran -c mod_param.f90 mod_schemes.f90 mod_save.f90 mod_rk3.f90
-gfortran task3.f90 mod_param.o mod_schemes.o mod_save.o mod_rk3.o -o solver_cfd
+gfortran task3.f90 mod_param.o mod_schemes.o mod_save.o mod_rk3.o -o task3
+./task3
