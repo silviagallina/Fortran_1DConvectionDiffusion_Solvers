@@ -53,16 +53,7 @@ program task3
        do i = 0, nx-1
             phi_exact(i) = 0.0_rp
 
-            ! La soluzione esatta deve considerare la periodicità ai bordi. Sto aggiungendo delle gaussiane "immaginarie" a distanza L, 2L, ecc. 
-            ! dal centro x = 0.5 per tenere conto di questo effetto. 
-            ! La larghezza effettiva della gaussiana al tempo t è sqrt(sigma**2 + 2*v*t) a causa della diffusione. A t = 3.0, questa larghezza è 
-            ! circa 0.265. La regola pratica è che la gaussiana è "praticamente tutta" dentro ±3σ dal centro (x=0.5). Quindi la campana al tempo
-            ! finale si estende da circa 0.5 - 3*0.265 = -0.295 (che è equivalente a 0.705 a causa della periodicità) a 
-            ! 0.5 + 3*0.265 = 0.5 + 0.795 = 1.295 (che è equivalente a 0.295). La campana occupa circa 0.8 di larghezza totale (6σ_eff), che è 
-            ! l'80% del dominio e le code escono di 0.3 da entrambi i lati.  
-            ! Se la distanza tra la copia e il dominio è meno di ~3σ_eff, quella copia contribuisce, mentre se e è oltre 3σ_eff, posso ignorarla.
-            ! Ad esempio, le copie a ±2L (0.5±2.0) sono a distanza 1.5, che è più di 3σ_eff, quindi non contribuiscono in modo significativo e 
-            ! quindi mi fermo a k = ±2.
+            ! The exact solution is a sum of Gaussians due to the periodic boundaries.
                 do k = -2, 2
                     dist = x(i) - x0 - c*t + real(k, rp) * L
                     
